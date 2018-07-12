@@ -21,7 +21,7 @@ def client(msg, log_buffer=sys.stderr):
         sock.sendall(msg.encode('utf-8'))
         while str(received_msg) != msg:
             received_msg += sock.recv(16).decode('utf8')
-            logging.info(f"received {received_msg}")
+            logging.info(f'received "{received_msg}"')
     except Exception as e:
         logging.info(e)
 
